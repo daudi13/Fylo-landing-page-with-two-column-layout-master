@@ -44,6 +44,18 @@ h1, h2, h3 {
     font-weight: 'Raleway', sans-serif;
     font-weight: 700;
 }
+
+button {
+    transition-duration: 0.5s;
+    transition-delay: 0.3s;
+    opacity: 0.9;
+}
+
+button:hover {
+    box-shadow: var(--bs);
+    opacity: 1;
+}
+
 /* navigation bar */
 
 
@@ -73,7 +85,29 @@ h1, h2, h3 {
 .main--nav ul a {
     text-decoration: none;
     color: inherit;
+    position: relative;
 }
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--bright-blue);
+    transform-origin: bottom center;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+
+
 
 /* the intoduction area */
 
@@ -136,6 +170,11 @@ h1, h2, h3 {
     display: grid;
     padding: 0 20px 4rem 20px;
     grid-gap: 1rem;
+    background: url('./images/bg-curve-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .main-two .main--photo {
@@ -421,6 +460,9 @@ footer a {
         font-size: 17px;
     }
 
+    .main-two {
+        background: url('./images/bg-curve-desktop.svg');
+    }
 
     .early .access--input {
         align-items: flex-start;
@@ -469,6 +511,16 @@ footer a {
     .footer--nav > ul + ul {
         margin-top: 0;
     }
+}
+
+@media (min-width:1440px) {
+    body {
+        font-size: 18px;
+    }
+
+    .footer--wrapper .social--media {
+    text-align: left;
+}
 }
 
 
