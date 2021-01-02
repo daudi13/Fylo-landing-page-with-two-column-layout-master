@@ -464,6 +464,10 @@ footer a {
         background: url('./images/bg-curve-desktop.svg');
     }
 
+    .early {
+        padding: 2rem;
+    }
+
     .early .access--input {
         align-items: flex-start;
     }
@@ -516,6 +520,10 @@ footer a {
 @media (min-width:1440px) {
     body {
         font-size: 18px;
+    }
+
+    .wrapper {
+        padding: 0 3rem;
     }
 
     .footer--wrapper .social--media {
